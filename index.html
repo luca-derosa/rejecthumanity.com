@@ -9,11 +9,28 @@
 <meta property="og:title" content="Luca De Rosa, author">
 <meta property="og:description" content="LitRPG and harem progression fantasy. Bound to the Fallen Book 2, The Heralds of Change, is out.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://rejecthumanity.com/">
+<meta property="og:image" content="https://rejecthumanity.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Luca De Rosa, LitRPG and harem progression fantasy, with the covers of The Heralds of Change, The Infinity Dungeon and Supers Reforged">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rejecthumanity.com/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#02071d">
 <link rel="preload" href="assets/fonts/MonaSans-VF.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:"Mona Sans";src:url("assets/fonts/MonaSans-VF.woff2") format("woff2");font-weight:200 900;font-stretch:75% 125%;font-display:swap}
-body{margin:0}
-.site{
+/* Hallmark · shape: author shelf · genre: atmospheric · theme: Midnight (dealt) · job: buy · draw: manual
+ * hero: stage, one cover beside its pitch · nav: edge-aligned bar, the name left, links and Patreon right · footer: colophon, the about line over the links · imagery: the book covers · signature: the newest cover at full height beside its one-line pitch
+ * axes: dark navy paper, one azure signal, Mona Sans wide heads · contrast: pass · fold: pass · v2 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, the first Hallmark page in this house, so nothing to differ from yet; kept the shelf as plain rows of real covers */
+/* Hallmark · waive 85 · the page closes on the newsletter under the free serial · readers of a serial author hear about the next book by email, so the list is the author's own close */
+/* Hallmark · dismissed 77 · the home holds hero, shelf, free serial and newsletter; book pages and an about page come next as their own pages */
+/* Hallmark · dismissed F20 · the free serial offers three real places to read, Royal Road, Scribble Hub and Patreon, so the third button wraps on purpose */
+:root{
+  color-scheme: dark;
   --paper: oklch(14% 0.048 264); --paper-2: oklch(18.5% 0.052 264); --paper-3: oklch(23% 0.055 264);
   --ink: oklch(95% 0.016 250); --ink-2: oklch(88% 0.05 245); --muted: oklch(73% 0.04 256);
   --rule: oklch(29% 0.058 264); --rule-2: oklch(40% 0.06 262);
@@ -24,13 +41,18 @@ body{margin:0}
   --gutter: 64px; --gap: 32px;
   --t-display: clamp(2.75rem, 5vw + 1rem, 5.25rem); --t-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
   --t-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --t-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+}
+@font-face{font-family:"Mona Sans";src:url("assets/fonts/MonaSans-VF.woff2") format("woff2");font-weight:200 900;font-stretch:75% 125%;font-display:swap}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper)}
+.site{
   background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.6;
-  font-synthesis: none; overflow-x: clip; min-height: 100%;
+  font-synthesis: none; min-height: 100%;
 }
 .site *{box-sizing:border-box}
 .site a:not(.btn){color:var(--ink);text-decoration-color:var(--rule-2);text-underline-offset:3px}
 .site a:not(.btn):hover{text-decoration-color:var(--accent)}
-.site :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 .wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gutter)}
 h1,h2{font-weight:300;font-stretch:125%;letter-spacing:-0.015em;line-height:1.04;margin:0;text-wrap:balance}
 h1{font-size:var(--t-display);max-width:14ch}
@@ -57,19 +79,18 @@ p{margin:0;text-wrap:pretty}
 .site .btn--secondary:hover{background:var(--paper-2);border-color:var(--muted)}
 .btn--small{min-height:40px;padding:0 16px}
 .btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 
 /* hero: stage, one cover */
-.hero{padding-block:48px 120px}
+.hero{padding-block:48px 80px}
 .hero__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
 .hero__text{display:flex;flex-direction:column;gap:24px}
 .hero__text .actions{margin-top:16px}
-.hero__art{display:flex;justify-content:center}
+.hero__art{display:flex;justify-content:flex-start}
 .hero__art a{display:block}
-.hero__art img{display:block;height:min(600px,70vh);width:auto;aspect-ratio:2/3;box-shadow:var(--shadow);transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}
+.hero__art img{display:block;height:min(680px,76svh);width:auto;aspect-ratio:2/3;box-shadow:var(--shadow);transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}
 .hero__art a:hover img{transform:translateY(-2px)}
-.hero__art a:focus-visible{outline:none}
-.hero__art a:focus-visible img{outline:2px solid var(--focus);outline-offset:3px}
 
 /* shelf: rows */
 .section{padding-block:144px}
@@ -93,7 +114,7 @@ p{margin:0;text-wrap:pretty}
 .tags li{font-size:0.875rem;font-weight:500;color:var(--ink-2);padding:4px 12px;border:1px solid var(--rule-2);line-height:1.4}
 
 /* free serial: band split */
-.band{background:var(--paper-2);padding-block:120px}
+.band{background:var(--paper-2);color:var(--ink);padding-block:120px}
 .split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);align-items:center}
 .split__art{grid-column:1 / span 5}
 .split__art img{display:block;width:100%;height:auto;max-width:420px;aspect-ratio:5/8;object-fit:contain;box-shadow:var(--shadow)}
@@ -123,14 +144,14 @@ p{margin:0;text-wrap:pretty}
 
 @media (prefers-reduced-motion: reduce){.site *{transition:none !important;animation:none !important}}
 @media (max-width: 60rem){
-  .site{--gutter:20px}
+  :root{--gutter:20px}
   .nav{padding-block:16px}
   .nav__bar{row-gap:12px}
   .nav__right{width:100%;justify-content:space-between}
   .nav__links{gap:16px;font-size:0.875rem}
   .hero{padding-block:16px 80px}
   .hero__grid{grid-template-columns:minmax(0,1fr);row-gap:32px}
-  .hero__art{order:-1}
+  .hero__art{order:-1;justify-content:center}
   .hero__art img{height:360px}
   .section{padding-block:96px}
   .section h2{margin-bottom:40px}
@@ -168,7 +189,7 @@ p{margin:0;text-wrap:pretty}
   <div class="wrap hero__grid">
     <div class="hero__text">
       <h1>The Heralds of Change is out.</h1>
-      <p class="lead">Book 2 of my harem LitRPG: a dragon girl, a dryad, and... another??</p>
+      <p class="lead">Book 2 of my harem LitRPG: a dragon girl, a dryad, and… another??</p>
       <div class="actions">
         <a class="btn btn--primary" href="https://www.amazon.com/dp/B0H1M69GRZ">Start with Book 1</a>
         <a class="btn btn--secondary" href="https://www.amazon.com/dp/B0H68716S1">Book 2 on Kindle</a>
@@ -204,7 +225,7 @@ p{margin:0;text-wrap:pretty}
         <div class="series__text">
           <h3>The Infinity Dungeon</h3>
           <ul class="tags" aria-label="Genre"><li>LitRPG</li></ul>
-          <p>Michael is living paycheck to paycheck when he finds a dungeon in the Appalachians. Its trials promise magic and money, and he isn't the only one who wants them.</p>
+          <p>Michael is living paycheck to paycheck when he finds a dungeon in the Appalachians. Its trials promise magic and money, and he isn’t the only one who wants them.</p>
           <p class="meta">Three books out with Mango Media. On Audible too.</p>
           <a class="more" href="https://www.amazon.com/dp/B0FQ8BMVKC">Start with Book 1</a>
         </div>
@@ -240,8 +261,8 @@ p{margin:0;text-wrap:pretty}
       <h2>A useless power, free on Royal Road</h2>
       <ul class="tags" aria-label="Genre"><li>Progression</li><li>Superhero</li><li>Harem</li></ul>
       <p class="lead">Superpowers are a lottery, and I was given the privilege of obtaining a really useless one.</p>
-      <p>Then my grandpa's hidden lab woke a second power: to take, alter, improve and bestow superpowers to anyone, with a single touch. This is a harem story.</p>
-      <p>Free on Royal Road and Scribble Hub while I write it. Patrons are chapters ahead. When Book 1 ends, it moves to Kindle Unlimited. Book 2, An Unkindness of Ravens: date TBA.</p>
+      <p>Then my grandpa’s hidden lab woke a second power: to take, alter, improve and bestow superpowers to anyone, with a single touch. This is a harem story.</p>
+      <p>Free while I write it; patrons read ahead. Then Book 1 goes to Kindle Unlimited. Book 2, An Unkindness of Ravens: date TBA.</p>
       <div class="actions">
         <a class="btn btn--primary" href="https://www.royalroad.com/fiction/183557/supers-reforged">Read on Royal Road</a>
         <a class="btn btn--secondary" href="https://www.scribblehub.com/series/2474540/supers-reforged/">Read on Scribble Hub</a>
@@ -265,7 +286,7 @@ p{margin:0;text-wrap:pretty}
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn btn--secondary" type="submit">Sign me up</button>
       </div>
-      <p class="form__help" id="signup-help" aria-live="polite">You'll get one email to confirm first. The list runs on MailerLite, and every email has an unsubscribe link.</p>
+      <p class="form__help" id="signup-help" aria-live="polite">One email to confirm first. Unsubscribe anytime.</p>
     </form>
     <script>
     (() => {
