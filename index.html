@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luca De Rosa, author</title>
+
+<meta name="description" content="Luca De Rosa writes LitRPG and harem progression fantasy: Bound to the Fallen, The Infinity Dungeon, Edge of Apocalypse, and Supers Reforged, free on Royal Road.">
+<meta property="og:title" content="Luca De Rosa, author">
+<meta property="og:description" content="LitRPG and harem progression fantasy. Bound to the Fallen Book 2, The Heralds of Change, is out.">
+<meta property="og:type" content="website">
+<link rel="preload" href="assets/fonts/MonaSans-VF.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Mona Sans";src:url("assets/fonts/MonaSans-VF.woff2") format("woff2");font-weight:200 900;font-stretch:75% 125%;font-display:swap}
+body{margin:0}
+.site{
+  --paper: oklch(14% 0.048 264); --paper-2: oklch(18.5% 0.052 264); --paper-3: oklch(23% 0.055 264);
+  --ink: oklch(95% 0.016 250); --ink-2: oklch(88% 0.05 245); --muted: oklch(73% 0.04 256);
+  --rule: oklch(29% 0.058 264); --rule-2: oklch(40% 0.06 262);
+  --accent: oklch(80% 0.11 230); --accent-hover: oklch(85% 0.1 230); --accent-ink: oklch(16% 0.05 264); --focus: oklch(84% 0.12 228);
+  --muted-dash: oklch(73% 0.04 256 / 0.7);
+  --font: "Mona Sans", ui-sans-serif, system-ui, sans-serif;
+  --shadow: 0 24px 48px -24px oklch(6% 0.04 264 / 0.7);
+  --gutter: 64px; --gap: 32px;
+  --t-display: clamp(2.75rem, 5vw + 1rem, 5.25rem); --t-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+  --t-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --t-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.6;
+  font-synthesis: none; overflow-x: clip; min-height: 100%;
+}
+.site *{box-sizing:border-box}
+.site a:not(.btn){color:var(--ink);text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.site a:not(.btn):hover{text-decoration-color:var(--accent)}
+.site :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gutter)}
+h1,h2{font-weight:300;font-stretch:125%;letter-spacing:-0.015em;line-height:1.04;margin:0;text-wrap:balance}
+h1{font-size:var(--t-display);max-width:14ch}
+h2{font-size:var(--t-section);max-width:20ch}
+h3{font-size:var(--t-title);font-weight:500;margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.lead{font-size:var(--t-lead);color:var(--ink-2);max-width:34ch}
+.meta{font-size:0.875rem;font-weight:500;color:var(--muted)}
+
+/* nav: edge-aligned bar on the paper */
+.nav{padding-block:24px}
+.nav__bar{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);flex-wrap:wrap}
+.nav__mark{font-size:1.125rem;font-weight:500;font-stretch:125%;text-decoration:none}
+.nav__right{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.nav__links{display:flex;gap:24px;font-size:0.9375rem}
+.site .nav__links a{text-decoration:none;color:var(--ink-2)}
+.site .nav__links a:hover{color:var(--ink)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font:500 1rem/1 var(--font);text-decoration:none;border:1px solid transparent;background:transparent;color:var(--ink);cursor:pointer;transition:background-color 220ms cubic-bezier(0.16,1,0.3,1),border-color 220ms cubic-bezier(0.16,1,0.3,1)}
+.site .btn--primary{background:var(--accent);color:var(--accent-ink)}
+.site .btn--primary:hover{background:var(--accent-hover)}
+.site .btn--secondary{border-color:var(--rule-2);color:var(--ink)}
+.site .btn--secondary:hover{background:var(--paper-2);border-color:var(--muted)}
+.btn--small{min-height:40px;padding:0 16px}
+.btn:active{transform:translateY(1px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero: stage, one cover */
+.hero{padding-block:48px 120px}
+.hero__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
+.hero__text{display:flex;flex-direction:column;gap:24px}
+.hero__text .actions{margin-top:16px}
+.hero__art{display:flex;justify-content:center}
+.hero__art a{display:block}
+.hero__art img{display:block;height:min(600px,70vh);width:auto;aspect-ratio:2/3;box-shadow:var(--shadow);transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}
+.hero__art a:hover img{transform:translateY(-2px)}
+.hero__art a:focus-visible{outline:none}
+.hero__art a:focus-visible img{outline:2px solid var(--focus);outline-offset:3px}
+
+/* shelf: rows */
+.section{padding-block:144px}
+.section h2{margin-bottom:64px}
+.shelf{list-style:none;margin:0;padding:0}
+.series{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);padding-block:48px;border-top:1px solid var(--rule)}
+.series:last-child{border-bottom:1px solid var(--rule)}
+.series__text{grid-column:1 / span 4;display:flex;flex-direction:column;gap:16px}
+.series__text .more{font-weight:500;margin-top:8px}
+.covers{grid-column:5 / span 8;display:flex;gap:24px;align-items:flex-start}
+.cover{display:flex;flex-direction:column;gap:12px;width:220px;flex-shrink:0;text-decoration:none}
+.cover__frame{position:relative;display:block}
+.cover img{display:block;width:220px;height:330px;object-fit:cover;box-shadow:var(--shadow);transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}
+.site a.cover:hover img{transform:translateY(-4px)}
+.cover small{font-size:0.875rem;color:var(--muted);line-height:1.4}
+.cover--soon img{opacity:0.5}
+.cover__tag{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;background:var(--paper-3);color:var(--ink);font-weight:500;font-size:0.875rem}
+
+/* genre tags: square, body face, sentence case */
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{font-size:0.875rem;font-weight:500;color:var(--ink-2);padding:4px 12px;border:1px solid var(--rule-2);line-height:1.4}
+
+/* free serial: band split */
+.band{background:var(--paper-2);padding-block:120px}
+.split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);align-items:center}
+.split__art{grid-column:1 / span 5}
+.split__art img{display:block;width:100%;height:auto;max-width:420px;aspect-ratio:5/8;object-fit:contain;box-shadow:var(--shadow)}
+.split__text{grid-column:7 / span 6;display:flex;flex-direction:column;gap:24px}
+.split__text .actions{margin-top:16px}
+
+/* newsletter: form */
+.form{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);align-items:end}
+.form__head{grid-column:1 / span 5;display:flex;flex-direction:column;gap:24px}
+.form__fields{grid-column:7 / span 6;display:flex;flex-direction:column;gap:8px}
+.form__fields label{font-size:0.875rem;font-weight:500;color:var(--muted)}
+.form__row{display:flex;gap:8px}
+.form__row input{flex:1;min-width:0;min-height:48px;padding:0 16px;border:1px solid var(--muted);background:var(--paper);color:var(--ink);font:400 1rem var(--font);border-radius:0;outline:2px solid transparent;outline-offset:-3px}
+.form__row input:focus-visible{outline-color:var(--focus)}
+.form__help{font-size:0.875rem;color:var(--muted);min-height:1.5em}
+
+/* slots for missing facts */
+.fill{padding:0 0.25em;border:1px dashed var(--muted-dash);border-radius:3px;color:var(--muted)}
+
+/* footer: colophon */
+.foot{border-top:1px solid var(--rule);padding-block:64px 48px}
+.foot__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.foot__about{grid-column:1 / span 6;display:flex;flex-direction:column;gap:12px}
+.foot__mark{font-size:var(--t-title);font-weight:300;font-stretch:125%}
+.foot__links{grid-column:8 / span 5;display:flex;flex-wrap:wrap;gap:12px 24px;align-content:start}
+.foot__legal{margin-top:48px;font-size:0.875rem;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){.site *{transition:none !important;animation:none !important}}
+@media (max-width: 60rem){
+  .site{--gutter:20px}
+  .nav{padding-block:16px}
+  .nav__bar{row-gap:12px}
+  .nav__right{width:100%;justify-content:space-between}
+  .nav__links{gap:16px;font-size:0.875rem}
+  .hero{padding-block:16px 80px}
+  .hero__grid{grid-template-columns:minmax(0,1fr);row-gap:32px}
+  .hero__art{order:-1}
+  .hero__art img{height:360px}
+  .section{padding-block:96px}
+  .section h2{margin-bottom:40px}
+  .series,.split,.form,.foot__grid{grid-template-columns:minmax(0,1fr)}
+  .series__text,.covers,.split__art,.split__text,.form__head,.form__fields,.foot__about,.foot__links{grid-column:auto}
+  .covers{overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+  .cover{width:150px;scroll-snap-align:start}
+  .cover img{width:150px;height:225px}
+  .band{padding-block:80px}
+  .split__art img{max-width:260px}
+}
+</style>
+
+</head>
+<body>
+
+<div class="site">
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap nav__bar">
+    <a class="nav__mark" href="#top" aria-label="Luca De Rosa, home">Luca De Rosa</a>
+    <div class="nav__right">
+      <div class="nav__links">
+        <a href="#shelf">Books</a>
+        <a href="#free">Read free</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://discord.gg/NTaDVzCRe4">Discord</a>
+      </div>
+      <a class="btn btn--secondary btn--small" href="https://www.patreon.com/c/Luca_DR">Patreon</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1>The Heralds of Change is out.</h1>
+      <p class="lead">Book 2 of my harem LitRPG: a dragon girl, a dryad, and... another??</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="https://www.amazon.com/dp/B0H1M69GRZ">Start with Book 1</a>
+        <a class="btn btn--secondary" href="https://www.amazon.com/dp/B0H68716S1">Book 2 on Kindle</a>
+      </div>
+    </div>
+    <div class="hero__art">
+      <a href="https://www.amazon.com/dp/B0H68716S1"><img src="assets/covers/bound_2.jpg" width="600" height="900" alt="The Heralds of Change, Bound to the Fallen Book 2, on Amazon"></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="shelf">
+  <div class="wrap">
+    <h2>Pick a series</h2>
+    <ul class="shelf">
+      <li class="series">
+        <div class="series__text">
+          <h3>Bound to the Fallen</h3>
+          <ul class="tags" aria-label="Genre"><li>LitRPG</li><li>Harem</li></ul>
+          <p>A space hauler, a hole, two broken legs, and an angel and a demon with a deal.</p>
+          <p class="meta">Both on KU and in paperback. Book 1 is on audio at <a href="https://siren.audio/audiobooks/a-bond-between-equals">Siren.Audio</a>.</p>
+          <a class="more" href="https://www.amazon.com/dp/B0H1M69GRZ">Start with A Bond Between Equals</a>
+        </div>
+        <div class="covers">
+          <a class="cover" href="https://www.amazon.com/dp/B0H1M69GRZ"><span class="cover__frame"><img src="assets/covers/bound_1.jpg" width="600" height="900" alt="A Bond Between Equals"></span><small>Book 1</small></a>
+          <a class="cover" href="https://www.amazon.com/dp/B0H68716S1"><span class="cover__frame"><img src="assets/covers/bound_2.jpg" width="600" height="900" alt="The Heralds of Change"></span><small>Book 2</small></a>
+          <div class="cover cover--soon"><span class="cover__frame"><img src="assets/covers/bound_3.jpg" width="600" height="997" alt="Bound to the Fallen Book 3 cover art"><span class="cover__tag">Date TBA</span></span><small>Book 3</small></div>
+        </div>
+      </li>
+      <li class="series">
+        <div class="series__text">
+          <h3>The Infinity Dungeon</h3>
+          <ul class="tags" aria-label="Genre"><li>LitRPG</li></ul>
+          <p>Michael is living paycheck to paycheck when he finds a dungeon in the Appalachians. Its trials promise magic and money, and he isn't the only one who wants them.</p>
+          <p class="meta">Three books out with Mango Media. On Audible too.</p>
+          <a class="more" href="https://www.amazon.com/dp/B0FQ8BMVKC">Start with Book 1</a>
+        </div>
+        <div class="covers">
+          <a class="cover" href="https://www.amazon.com/dp/B0FQ8BMVKC"><span class="cover__frame"><img src="assets/covers/infinity_1.jpg" width="600" height="900" alt="The Infinity Dungeon, Book 1"></span><small>Book 1</small></a>
+          <a class="cover" href="https://www.amazon.com/dp/B0GG8QW1YC"><span class="cover__frame"><img src="assets/covers/infinity_2.jpg" width="600" height="900" alt="The Infinity Dungeon, Book 2"></span><small>Book 2</small></a>
+          <a class="cover" href="https://www.amazon.com/dp/B0H2N35W2G"><span class="cover__frame"><img src="assets/covers/infinity_3.jpg" width="600" height="900" alt="The Infinity Dungeon, Book 3"></span><small>Book 3</small></a>
+        </div>
+      </li>
+      <li class="series">
+        <div class="series__text">
+          <h3>Edge of Apocalypse</h3>
+          <ul class="tags" aria-label="Genre"><li>LitRPG</li></ul>
+          <p>Albert is a college student with a wandering mind, until the System hands him a quest: fight back against the invasion, earning every skill the hard way.</p>
+          <p class="meta">Finished in two books. On KU.</p>
+          <a class="more" href="https://www.amazon.com/dp/B0DRPR2LLN">Start with Book 1</a>
+        </div>
+        <div class="covers">
+          <a class="cover" href="https://www.amazon.com/dp/B0DRPR2LLN"><span class="cover__frame"><img src="assets/covers/edge_1.jpg" width="600" height="900" alt="Edge of Apocalypse, Book 1"></span><small>Book 1</small></a>
+          <a class="cover" href="https://www.amazon.com/dp/B0F8WQ6QL6"><span class="cover__frame"><img src="assets/covers/edge_2.jpg" width="600" height="900" alt="Edge of Apocalypse, Book 2: The Future Ruin"></span><small>Book 2</small></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="free">
+  <div class="wrap split">
+    <div class="split__art">
+      <a href="https://www.royalroad.com/fiction/183557/supers-reforged"><img src="assets/covers/supers_1.jpg" width="600" height="960" alt="Supers Reforged, Book 1: A Useless Power, on Royal Road"></a>
+    </div>
+    <div class="split__text">
+      <h2>A useless power, free on Royal Road</h2>
+      <ul class="tags" aria-label="Genre"><li>Progression</li><li>Superhero</li><li>Harem</li></ul>
+      <p class="lead">Superpowers are a lottery, and I was given the privilege of obtaining a really useless one.</p>
+      <p>Then my grandpa's hidden lab woke a second power: to take, alter, improve and bestow superpowers to anyone, with a single touch. This is a harem story.</p>
+      <p>Free on Royal Road and Scribble Hub while I write it. Patrons are chapters ahead. When Book 1 ends, it moves to Kindle Unlimited. Book 2, An Unkindness of Ravens: date TBA.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="https://www.royalroad.com/fiction/183557/supers-reforged">Read on Royal Road</a>
+        <a class="btn btn--secondary" href="https://www.scribblehub.com/series/2474540/supers-reforged/">Read on Scribble Hub</a>
+        <a class="btn btn--secondary" href="https://www.patreon.com/c/Luca_DR">Read ahead on Patreon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="newsletter">
+  <div class="wrap form">
+    <div class="form__head">
+      <h2>An email when a book comes out</h2>
+      <p class="lead">Nothing else.</p>
+    </div>
+    <form class="form__fields" id="signup" action="https://assets.mailerlite.com/jsonp/1741492/forms/164169874304664859/subscribe" method="post" target="_blank">
+      <label for="email">Email address</label>
+      <div class="form__row">
+        <input id="email" name="fields[email]" type="email" autocomplete="email" inputmode="email" required>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn btn--secondary" type="submit">Sign me up</button>
+      </div>
+      <p class="form__help" id="signup-help" aria-live="polite">You'll get one email to confirm first. The list runs on MailerLite, and every email has an unsubscribe link.</p>
+    </form>
+    <script>
+    (() => {
+      const form = document.getElementById("signup");
+      const help = document.getElementById("signup-help");
+      const button = form.querySelector("button");
+      const failed = "That didn\u2019t go through. Try again in a minute.";
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        button.disabled = true;
+        help.textContent = "Sending\u2026";
+        try {
+          const response = await fetch(form.action, { method: "POST", body: new URLSearchParams(new FormData(form)) });
+          const result = await response.json();
+          if (result.success) {
+            form.querySelector(".form__row").style.display = "none";
+            help.textContent = "Almost done: check your inbox for the confirmation link (and the spam folder).";
+          } else {
+            const field = result.errors && result.errors.fields && result.errors.fields.email;
+            help.textContent = (field && field[0]) || failed;
+            button.disabled = false;
+          }
+        } catch (error) {
+          help.textContent = failed;
+          button.disabled = false;
+        }
+      });
+    })();
+    </script>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__about">
+        <p class="foot__mark">Luca De Rosa</p>
+        <p class="meta">A LitRPG author who decided to get a bit spicier. Italian writer, English second language, pizza with a fork eater.</p>
+        <p class="meta">Questions, swaps, or just saying hi: come find me on <a href="https://discord.gg/NTaDVzCRe4">Discord</a>.</p>
+      </div>
+      <div class="foot__links">
+        <a href="https://discord.gg/NTaDVzCRe4">Discord</a>
+        <a href="https://www.patreon.com/c/Luca_DR">Patreon</a>
+        <a href="https://www.royalroad.com/profile/173552">Royal Road</a>
+        <a href="https://www.threads.com/@lucadr_author">Threads</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+    </div>
+    <p class="foot__legal">© 2026 Luca De Rosa</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
