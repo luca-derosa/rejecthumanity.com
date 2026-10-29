@@ -1,14 +1,13 @@
-// Sticky nav: on the first scroll the bar becomes a slim strip (is-stuck), once the hero
-// cover has scrolled away the newest cover docks into it as a bookmark (is-docked), the current section's link lights up,
-// and on a phone the links row tucks away while scrolling down and returns on the way up.
+// Sticky nav: on the first scroll the bar becomes a slim strip (is-stuck), the current
+// section's link lights up, and on a phone the links row tucks away while scrolling down
+// (is-tucked) and returns on the way up.
 // The strip is drawn by .nav::before at a measured height (scaled, not resized, when the
-// phone links tuck), so the page never shifts.
+// phone links tuck), so the page never shifts. --lift moves the bar up inside the strip,
+// so the strip keeps the same space above and below its rows.
 (() => {
   const nav = document.querySelector(".nav");
   if (!nav) return;
   const mark = nav.querySelector(".nav__mark");
-  const dock = nav.querySelector(".nav__dock");
-  const art = document.querySelector(".hero__art");
   const phone = window.matchMedia("(max-width: 60rem)");
   let lastY = window.scrollY;
   let ticking = false;
@@ -17,24 +16,21 @@
 
   function measure() {
     const style = getComputedStyle(nav);
-    const pad = px(style.paddingTop);
-    const lift = px(style.getPropertyValue("--lift"));
-    const row = Math.max(mark.offsetHeight, dock ? dock.offsetHeight : 0);
-    const full = nav.offsetHeight + lift;
+    const edge = px(style.paddingTop) + px(style.getPropertyValue("--lift"));
+    const full = nav.offsetHeight - (px(style.paddingTop) - edge) * 2;
+    const tucked = edge * 2 + mark.offsetHeight;
     nav.style.setProperty("--strip-full", `${full}px`);
-    nav.style.setProperty("--strip-ratio", String(Math.min(1, (pad * 2 + row + lift) / full)));
+    nav.style.setProperty("--strip-ratio", String(Math.min(1, tucked / full)));
   }
 
   function update() {
     ticking = false;
     const y = window.scrollY;
     const stuck = y > 8;
-    const docked = art ? art.getBoundingClientRect().bottom < nav.offsetHeight : stuck;
     if (nav.classList.contains("is-stuck") !== stuck) {
       nav.classList.toggle("is-stuck", stuck);
       measure(); // the stuck bar can be shorter (one links row on a phone)
     }
-    nav.classList.toggle("is-docked", docked);
     if (phone.matches && stuck) {
       if (y > lastY + 6) nav.classList.add("is-tucked");
       else if (y < lastY - 6) nav.classList.remove("is-tucked");
