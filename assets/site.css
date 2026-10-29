@@ -55,6 +55,13 @@ p{margin:0;text-wrap:pretty}
 .site .nav__links a{text-decoration:none;color:var(--ink-2);text-decoration-thickness:2px;text-underline-offset:10px}
 .site .nav__links a:hover{color:var(--ink)}
 .site .nav__links a[aria-current]{color:var(--ink);text-decoration-line:underline;text-decoration-color:var(--accent)}
+/* phone strip: the section you are in, on the right; a tap unfolds the links */
+.nav__here{display:none;align-items:center;gap:8px;margin:-8px 0 -8px auto;padding:8px 0 8px 16px;border:0;background:none;color:var(--ink-2);font:500 0.8125rem/1.4 var(--font);cursor:pointer}
+.nav__here-text{display:inline-block}
+.nav__here-text.is-swapping{animation:here-in 260ms cubic-bezier(0.16,1,0.3,1)}
+@keyframes here-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nav__here-mark{color:var(--accent);transition:transform 220ms ease-out}
+.nav__here[aria-expanded="true"] .nav__here-mark{transform:rotate(180deg)}
 [id]{scroll-margin-top:88px}
 
 /* buttons */
@@ -133,6 +140,7 @@ p{margin:0;text-wrap:pretty}
   :root{--gutter:20px}
   .nav{--lift:-6px;padding-block:16px}
   .nav__right{order:2;width:100%;justify-content:space-between;margin-left:0}
+  .nav.is-stuck .nav__here{display:inline-flex}
   .nav.is-stuck .nav__right{flex-wrap:nowrap;gap:12px}
   .nav.is-stuck .nav__links{gap:12px;font-size:0.8125rem}
   .site .nav.is-stuck .nav__right .btn{min-height:0;padding:0;border:0;background:none;color:var(--accent);font-size:0.8125rem}
