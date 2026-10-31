@@ -51,7 +51,8 @@ p{margin:0;text-wrap:pretty}
 .nav__mark{font-size:1.125rem;font-weight:500;font-stretch:125%;text-decoration:none;transition:font-stretch 320ms cubic-bezier(0.16,1,0.3,1),letter-spacing 320ms}
 .nav.is-stuck .nav__mark{font-stretch:75%;letter-spacing:0.02em}
 .nav__right{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-left:auto;transition:opacity 220ms ease-out,transform 320ms cubic-bezier(0.16,1,0.3,1),visibility 220ms}
-.nav__links{display:flex;gap:24px;font-size:0.9375rem}
+.nav__links{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:0.9375rem}
+.nav__links a{white-space:nowrap}
 .site .nav__links a{text-decoration:none;color:var(--ink-2);text-decoration-thickness:2px;text-underline-offset:10px}
 .site .nav__links a:hover{color:var(--ink)}
 .site .nav__links a[aria-current]{color:var(--ink);text-decoration-line:underline;text-decoration-color:var(--accent)}
@@ -144,7 +145,7 @@ p{margin:0;text-wrap:pretty}
   .nav__right{order:2;width:100%;justify-content:space-between;margin-left:0}
   .nav.is-stuck .nav__here{display:inline-flex}
   .nav.is-stuck .nav__right{flex-wrap:nowrap;gap:12px}
-  .nav.is-stuck .nav__links{gap:12px;font-size:0.8125rem}
+  .nav.is-stuck .nav__links{gap:8px;font-size:0.8125rem}
   .site .nav.is-stuck .nav__right .btn{min-height:0;padding:0;border:0;background:none;color:var(--accent);font-size:0.8125rem}
   .nav.is-tucked .nav__right{opacity:0;visibility:hidden;transform:translateY(-8px)}
   .nav__links{gap:16px;font-size:0.875rem}
@@ -171,4 +172,10 @@ p{margin:0;text-wrap:pretty}
 .prose p,.prose li{color:var(--ink-2)}
 .prose ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:12px}
 .prose .actions{margin-top:24px}
+/* news: posts newest first, a rule between them */
+.post{display:flex;flex-direction:column;gap:12px;padding-block:40px;border-top:1px solid var(--rule)}
+.news h1 + .post{margin-top:24px}
+.post h2{margin-top:0}
+.site .post h2 a{text-decoration:none}
+.site .post h2 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
 @media (max-width: 60rem){.page{padding-block:24px 80px}}
