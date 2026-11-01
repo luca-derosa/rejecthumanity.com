@@ -71,7 +71,7 @@
   update();
 
   // The link for the section in view, by its hash, on the page that holds the sections.
-  const links = [...nav.querySelectorAll(".nav__links a[href*='#']")];
+  const links = [...nav.querySelectorAll(".nav__links a[href*='#'], a.nav__cta[href*='#']")];
   const sections = links
     .map((a) => document.getElementById(a.hash.slice(1)))
     .filter(Boolean);
