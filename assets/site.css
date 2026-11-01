@@ -151,7 +151,10 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 
 /* newsletter: form */
 .form{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);align-items:end}
-.form__head{grid-column:1 / span 5;display:flex;flex-direction:column;gap:24px}
+/* the promise sits right under its heading, and less air under the form (Luca 2026-11-01) */
+.form__head{grid-column:1 / span 5;display:flex;flex-direction:column;gap:8px}
+#newsletter{padding-bottom:64px}
+#newsletter h2{margin-bottom:0}
 .form__fields{grid-column:7 / span 6;display:flex;flex-direction:column;gap:8px}
 .form__fields label{font-size:0.875rem;font-weight:500;color:var(--muted)}
 .form__row{display:flex;gap:8px}
@@ -167,7 +170,15 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .foot__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
 .foot__about{grid-column:1 / span 6;display:flex;flex-direction:column;gap:12px}
 .foot__mark{font-size:var(--t-title);font-weight:300;font-stretch:125%}
-.foot__links{grid-column:8 / span 5;display:flex;flex-wrap:wrap;gap:12px 24px;align-content:start}
+/* footer links: brand icons for the four people recognise, one quiet line for the other profiles (they stay visible because the Person data names them), Privacy alone (Luca 2026-11-01) */
+.foot__links{grid-column:8 / span 5;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.foot__icons{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 0 -10px}
+.site .foot__icons a{display:inline-flex;padding:10px;color:var(--ink-2);transition:color 220ms cubic-bezier(0.16,1,0.3,1)}
+.site .foot__icons a:hover{color:var(--accent)}
+.foot__icons svg{display:block;width:24px;height:24px}
+.foot__also,.foot__privacy{font-size:0.875rem;color:var(--muted)}
+.site .foot__also a{color:var(--muted)}
+.site .foot__also a:hover{color:var(--ink)}
 .foot__legal{margin-top:48px;font-size:0.875rem;color:var(--muted)}
 
 @media (prefers-reduced-motion: reduce){.site *{transition:none !important;animation:none !important}}
@@ -214,10 +225,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .band{padding-block:80px}
   /* phone: Royal Road and Scribble Hub side by side, Patreon on its own line under them */
   .phone-hide{display:none}
-  /* phone newsletter: the promise sits right under its heading, less air under the form */
   #newsletter{padding-bottom:32px}
-  #newsletter h2{margin-bottom:0}
-  .form__head{gap:8px}
   .split__art img{max-width:260px;margin-inline:auto}
   .split__text{align-items:center;text-align:center}
   .split__text .tags,.split__text .actions{justify-content:center}
