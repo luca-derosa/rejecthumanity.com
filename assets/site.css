@@ -126,15 +126,18 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .cover--soon img{opacity:0.5}
 .cover__tag{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;background:var(--paper-3);color:var(--ink);font-weight:500;font-size:0.875rem}
 
+/* series titles: one icon each side, 4px clear of the text, at the middle of the title box (icons from game-icons.net by Lorc and Delapouite, CC BY 3.0); --lp/--rp are each icon's own padding on the side facing the text, as a share of its width; --lsx/--rsx mirror an icon (the right one is mirrored by default) */
+.flanked{padding-left:1em}
+.flank{--s:0.95em;position:relative;display:inline-block}
+/* desktop: series titles break onto two lines by hand (Luca 2026-11-01), so the box hugs the longer line */
+@media (min-width: 60.0625rem){.title-br{display:block}}
+.flank::before,.flank::after{content:"";position:absolute;top:50%;translate:0 -50%;width:var(--s);height:var(--s);pointer-events:none;background:center/contain no-repeat}
+.flank::before{background-image:var(--l);right:100%;margin-right:calc(4px - var(--lp) * var(--s));scale:var(--lsx,1) 1;filter:drop-shadow(0 0 6px var(--lg))}
+.flank::after{background-image:var(--r);left:100%;margin-left:calc(4px - var(--rp) * var(--s));scale:var(--rsx,-1) 1;filter:drop-shadow(0 0 6px var(--rg))}
+.flank--bound{--l:url("icons/angel.svg");--lp:0.045;--lg:oklch(85% 0.09 230 / 0.7);--r:url("icons/bat.svg");--rp:0.035;--rg:oklch(55% 0.2 340 / 0.75)}
+.flank--infinity{--l:url("icons/torch.svg");--lsx:-1;--lp:0.041;--lg:oklch(80% 0.15 70 / 0.75);--r:url("icons/torch.svg");--rsx:1;--rp:0.041;--rg:oklch(80% 0.15 70 / 0.75)}
+.flank--edge{--l:url("icons/meteor.svg");--lp:0.037;--lg:oklch(66% 0.2 35 / 0.75);--r:url("icons/meteor.svg");--rp:0.037;--rg:oklch(66% 0.2 35 / 0.75)}
 /* genre tags: square, body face, sentence case */
-/* Bound to the Fallen: an angel wing and a bat wing grow out of the title (icons by Lorc, game-icons.net, CC BY 3.0) */
-.winged{padding-left:1em}
-.wing-box{position:relative;display:inline-block}
-/* desktop: the title always wraps in its column, so the break is set by hand and the box hugs the longer line; the wings sit at its middle */
-@media (min-width: 60.0625rem){.wing-br{display:block}}
-.wing-box::before,.wing-box::after{content:"";position:absolute;top:50%;width:0.95em;height:0.95em;pointer-events:none;background:var(--w) center/contain no-repeat}
-.wing-box::before{--w:url("wings/angel.svg");right:100%;margin-right:calc(4px - 0.043em);translate:0 -50%;filter:drop-shadow(0 0 6px oklch(85% 0.09 230 / 0.7))}
-.wing-box::after{--w:url("wings/bat.svg");left:100%;margin-left:calc(4px - 0.033em);translate:0 -50%;scale:-1 1;filter:drop-shadow(0 0 6px oklch(55% 0.2 340 / 0.75))}
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .tags li{font-size:0.875rem;font-weight:500;color:var(--ink-2);padding:4px 12px;border:1px solid var(--rule-2);line-height:1.4}
 
@@ -194,7 +197,8 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .section h2{margin-bottom:40px}
   .series,.split,.form,.foot__grid{grid-template-columns:minmax(0,1fr)}
   .series__text,.covers,.split__art,.split__text,.form__head,.form__fields,.foot__about,.foot__links{grid-column:auto}
-  .covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .covers{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  .covers > .cover{flex:0 0 calc((100% - 24px) / 3);min-width:0}
   .cover{width:auto}
   .cover img{width:100%;height:auto;aspect-ratio:2/3}
   /* shelf on the phone: tighter rhythm, rules only between series */
@@ -204,12 +208,17 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .series:last-child{border-bottom:0;padding-bottom:0}
   .series__text{gap:12px;align-items:center;text-align:center}
   .series__text .tags{justify-content:center}
-  .winged{padding-left:0}
+  .flanked{padding-left:0}
+  .flank{--s:0.8em}
   .cover{gap:8px;text-align:center}
   .band{padding-block:80px}
-  .split__art img{max-width:260px}
+  .split__art img{max-width:260px;margin-inline:auto}
+  .split__text{align-items:center;text-align:center}
+  .split__text .tags,.split__text .actions{justify-content:center}
 }
 
+/* desktop: series titles and tags centred, blurbs left (Luca 2026-11-01) */
+@media (min-width: 60.0625rem){.series__text h3{text-align:center}.series__text .tags{justify-content:center}.series__text .flanked{padding-left:0}}
 /* reading pages (privacy, 404): same chrome, a text column */
 .page{padding-block:48px 120px}
 .prose{max-width:46rem;display:flex;flex-direction:column;gap:12px}
