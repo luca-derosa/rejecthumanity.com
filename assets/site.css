@@ -212,6 +212,12 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .flank{--s:0.8em}
   .cover{gap:8px;text-align:center}
   .band{padding-block:80px}
+  /* phone: Royal Road and Scribble Hub side by side, Patreon on its own line under them */
+  .phone-hide{display:none}
+  /* phone newsletter: the promise sits right under its heading, less air under the form */
+  #newsletter{padding-bottom:32px}
+  #newsletter h2{margin-bottom:0}
+  .form__head{gap:8px}
   .split__art img{max-width:260px;margin-inline:auto}
   .split__text{align-items:center;text-align:center}
   .split__text .tags,.split__text .actions{justify-content:center}
