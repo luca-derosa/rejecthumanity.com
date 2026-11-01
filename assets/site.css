@@ -1,5 +1,5 @@
 /* Hallmark · shape: author shelf · genre: atmospheric · theme: Midnight (dealt) · job: buy · draw: manual
- * hero: stage, one cover beside its pitch · nav: edge-aligned bar, the name left, links and Patreon right · footer: colophon, the about line over the links · imagery: the book covers · signature: the newest cover at full height beside its one-line pitch
+ * hero: stage, three covers fanned beside its pitch over a blurred cover glow · nav: edge-aligned bar, the name left, links and Patreon right · footer: colophon, the about line over the links · imagery: the book covers · signature: the newest cover in front of its series fan, beside its one-line pitch
  * axes: dark navy paper, one azure signal, Mona Sans wide heads · contrast: pass · fold: pass · v2 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, the first Hallmark page in this house, so nothing to differ from yet; kept the shelf as plain rows of real covers */
 /* Hallmark · waive 85 · the page closes on the newsletter under the free serial · readers of a serial author hear about the next book by email, so the list is the author's own close */
@@ -77,14 +77,24 @@ p{margin:0;text-wrap:pretty}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 
 /* hero: stage, one cover */
-.hero{padding-block:48px 80px}
+.hero{position:relative;isolation:isolate;padding-block:48px 80px}
+.hero::before{content:"";position:absolute;inset:-320px 0 0 0;z-index:-1;pointer-events:none;background:url("glow.jpg") 72% 35%/cover no-repeat;filter:blur(48px) saturate(1.9);opacity:0.34;-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent);mask-image:linear-gradient(to bottom,#000 50%,transparent)}
 .hero__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
 .hero__text{display:flex;flex-direction:column;gap:24px}
 .hero__text .actions{margin-top:16px}
-.hero__art{display:flex;justify-content:flex-start}
-.hero__art a{display:block}
-.hero__art img{display:block;height:min(680px,76svh);width:auto;aspect-ratio:2/3;box-shadow:var(--shadow);transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}
-.hero__art a:hover img{transform:translateY(-2px)}
+.hero__art{display:flex;justify-content:center}
+/* the fan: three covers like a hand of cards, Book 2 in front, each bobbing on its own slow loop */
+.fan{--h:min(560px,66svh);--w:calc(var(--h) * 2 / 3);--spread:0.3;position:relative;width:min(100%,calc(var(--w) * 1.75));height:calc(var(--h) * 1.08)}
+.fan__card{position:absolute;left:50%;top:50%;display:block;width:var(--w);aspect-ratio:2/3;translate:-50% -50%}
+.fan__card img{display:block;width:100%;height:100%;box-shadow:var(--shadow);animation:fan-float 7s ease-in-out infinite;transition:translate 220ms cubic-bezier(0.16,1,0.3,1)}
+.fan__card--front{z-index:3;rotate:-3deg}
+.fan__card--left{z-index:1;scale:0.84;rotate:-11deg;translate:calc(-50% - var(--w) * var(--spread)) -46%}
+.fan__card--right{z-index:2;scale:0.84;rotate:8deg;translate:calc(-50% + var(--w) * var(--spread)) -44%}
+.fan__card--left img,.fan__card--right img{filter:brightness(0.62) saturate(0.9)}
+.fan__card--left img{animation-duration:8s;animation-delay:-2s}
+.fan__card--right img{animation-duration:9s;animation-delay:-5s}
+a.fan__card:hover img{translate:0 -6px;filter:none}
+@keyframes fan-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 /* shelf: rows */
 .section{padding-block:144px}
@@ -151,8 +161,14 @@ p{margin:0;text-wrap:pretty}
   .nav__links{gap:16px;font-size:0.875rem}
   .hero{padding-block:16px 24px}
   .hero__grid{grid-template-columns:minmax(0,1fr);row-gap:32px}
-  .hero__art{order:-1;justify-content:center}
-  .hero__art img{height:360px}
+  .hero__art{order:-1}
+  .fan{--h:220px;--spread:0.32}
+  .hero{padding-top:4px}
+  .hero::before{opacity:0.4}
+  .hero__grid{row-gap:20px}
+  .hero__text{align-items:center;text-align:center;gap:16px}
+  .hero__text .actions{justify-content:center;flex-wrap:nowrap;gap:10px;margin-top:8px}
+  .hero__text .actions .btn{padding-inline:16px;white-space:nowrap}
   .section{padding-block:56px 72px}
   .section h2{margin-bottom:40px}
   .series,.split,.form,.foot__grid{grid-template-columns:minmax(0,1fr)}
