@@ -181,6 +181,14 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
   .cover{width:auto}
   .cover img{width:100%;height:auto;aspect-ratio:2/3}
+  /* shelf on the phone: tighter rhythm, rules only between series */
+  #shelf h2{margin-bottom:28px}
+  .series{padding-block:32px;row-gap:20px}
+  .series:first-child{border-top:0;padding-top:0}
+  .series:last-child{border-bottom:0;padding-bottom:0}
+  .series__text{gap:12px}
+  .series__text .more{margin-top:4px}
+  .cover{gap:8px}
   .band{padding-block:80px}
   .split__art img{max-width:260px}
 }
