@@ -44,6 +44,9 @@ p{margin:0;text-wrap:pretty}
 .nav{--lift:-8px;position:sticky;top:0;z-index:20;padding-block:24px;pointer-events:none}
 .nav::before{content:"";position:absolute;inset:0 0 auto 0;height:var(--strip-full,100%);background:var(--paper-2);opacity:0;transform-origin:top;transition:opacity 220ms ease-out,transform 320ms cubic-bezier(0.16,1,0.3,1)}
 .nav.is-stuck::before{opacity:1}
+/* a cap over the top seam: iOS Safari's fractional scroll can leave a 1px sliver of page above the strip */
+.nav::after{content:"";position:absolute;left:0;right:0;top:-16px;height:18px;background:var(--paper-2);opacity:0;transition:opacity 220ms ease-out;pointer-events:none}
+.nav.is-stuck::after{opacity:1}
 .nav.is-tucked::before{transform:scaleY(var(--strip-ratio,1))}
 .nav__bar{position:relative;display:flex;align-items:center;column-gap:0;row-gap:12px;flex-wrap:wrap;transition:transform 320ms cubic-bezier(0.16,1,0.3,1)}
 .nav__bar > *{pointer-events:auto}
