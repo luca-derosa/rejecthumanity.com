@@ -129,10 +129,12 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 /* genre tags: square, body face, sentence case */
 /* Bound to the Fallen: an angel wing and a bat wing grow out of the title (icons by Lorc, game-icons.net, CC BY 3.0) */
 .winged{padding-left:1em}
-.winged .wing-l,.winged .wing-r{position:relative;white-space:nowrap}
-.wing-l::before,.wing-r::after{content:"";position:absolute;top:50%;width:0.95em;height:0.95em;pointer-events:none;background:var(--w) center/contain no-repeat}
-.wing-l::before{--w:url("wings/angel.svg");right:100%;margin-right:calc(4px - 0.043em);translate:0 -62%;filter:drop-shadow(0 0 6px oklch(85% 0.09 230 / 0.7))}
-.wing-r::after{--w:url("wings/bat.svg");left:100%;margin-left:calc(4px - 0.033em);translate:0 -62%;scale:-1 1;filter:drop-shadow(0 0 6px oklch(55% 0.2 340 / 0.75))}
+.wing-box{position:relative;display:inline-block}
+/* desktop: the title always wraps in its column, so the break is set by hand and the box hugs the longer line; the wings sit at its middle */
+@media (min-width: 60.0625rem){.wing-br{display:block}}
+.wing-box::before,.wing-box::after{content:"";position:absolute;top:50%;width:0.95em;height:0.95em;pointer-events:none;background:var(--w) center/contain no-repeat}
+.wing-box::before{--w:url("wings/angel.svg");right:100%;margin-right:calc(4px - 0.043em);translate:0 -50%;filter:drop-shadow(0 0 6px oklch(85% 0.09 230 / 0.7))}
+.wing-box::after{--w:url("wings/bat.svg");left:100%;margin-left:calc(4px - 0.033em);translate:0 -50%;scale:-1 1;filter:drop-shadow(0 0 6px oklch(55% 0.2 340 / 0.75))}
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .tags li{font-size:0.875rem;font-weight:500;color:var(--ink-2);padding:4px 12px;border:1px solid var(--rule-2);line-height:1.4}
 
