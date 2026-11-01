@@ -103,6 +103,15 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .section{padding-block:144px}
 .section h2{margin-bottom:64px}
 .shelf{list-style:none;margin:0;padding:0}
+/* the shelf heading as a LitRPG System window: a framed, glowing prompt with corner brackets */
+.sysbox{--c:var(--accent);--b:18px;position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;width:fit-content;max-width:100%;margin:0 auto 64px;padding:28px 48px 32px;text-align:center;border:1px solid oklch(80% 0.11 230 / 0.35);background:linear-gradient(180deg,oklch(30% 0.08 245 / 0.45),oklch(18.5% 0.052 264 / 0.6));box-shadow:0 0 32px -4px oklch(80% 0.11 230 / 0.28),inset 0 0 24px oklch(80% 0.11 230 / 0.08)}
+.sysbox::before,.sysbox::after{content:"";position:absolute;inset:-5px;pointer-events:none;background:
+  linear-gradient(var(--c),var(--c)) top left/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) top left/2px var(--b) no-repeat,
+  linear-gradient(var(--c),var(--c)) top right/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) top right/2px var(--b) no-repeat}
+.sysbox::after{rotate:180deg}
+.sysbox__tag{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)}
+.sysbox h2{margin:0;max-width:none;text-shadow:0 0 24px oklch(80% 0.11 230 / 0.35)}
+.section .sysbox h2{margin-bottom:0}
 .series{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);padding-block:48px;border-top:1px solid var(--rule)}
 .series:last-child{border-bottom:1px solid var(--rule)}
 .series__text{grid-column:1 / span 4;display:flex;flex-direction:column;gap:16px}
@@ -182,7 +191,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .cover{width:auto}
   .cover img{width:100%;height:auto;aspect-ratio:2/3}
   /* shelf on the phone: tighter rhythm, rules only between series */
-  #shelf h2{margin-bottom:28px}
+  .sysbox{width:calc(100% - 10px);margin-bottom:36px;padding:22px 20px 24px;--b:14px}
   .series{padding-block:32px;row-gap:20px}
   .series:first-child{border-top:0;padding-top:0}
   .series:last-child{border-bottom:0;padding-bottom:0}
