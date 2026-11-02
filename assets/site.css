@@ -248,3 +248,38 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .site .post h2 a{text-decoration:none}
 .site .post h2 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
 @media (max-width: 60rem){.page{padding-block:24px 80px}}
+/* desktop shelf: covers grow to fill the row three across, two-book series centred; text centred against the covers; less air above the shelf */
+@media (min-width: 60.0625rem){
+  #shelf{padding-top:48px}
+  .sysbox{margin-bottom:24px}
+  .series__text{justify-content:center}
+  .covers{gap:32px;justify-content:center}
+  .covers > .cover{flex:0 0 calc((100% - 64px) / 3);width:auto;min-width:0}
+  .cover img{width:100%;height:auto;aspect-ratio:2/3}
+}
+/* hero fan: never wider than its column, so the right card stays inside the page edge (asymmetry found 2026-11-02: 16px over at 1920, 111px at 1024) */
+@media (min-width: 60.0625rem){.hero__art{container-type:inline-size}.fan{--h:min(560px,66svh,90cqi)}}
+/* Supers quest box (Luca 2026-11-02): the shelf's System window again, in the violet of the Supers lettering (#a759fc, sampled from the Book 1 cover); when Book 2 becomes the free one, swap --sv for Book 2's cover colour */
+.sysbox--supers{--sv:#a759fc;--c:var(--sv);border-color:color-mix(in oklab,var(--sv) 45%,transparent);background:linear-gradient(180deg,color-mix(in oklab,var(--sv) 22%,var(--paper)),color-mix(in oklab,var(--paper-2) 70%,var(--paper)));box-shadow:0 0 32px -4px color-mix(in oklab,var(--sv) 40%,transparent),inset 0 0 24px color-mix(in oklab,var(--sv) 12%,transparent)}
+.sysbox--supers .sysbox__tag{color:color-mix(in oklab,var(--sv) 55%,white)}
+.sysbox--supers h2{text-shadow:0 0 24px color-mix(in oklab,var(--sv) 45%,transparent)}
+/* seam into Supers (Luca 2026-11-02, canvas rounds 12-13): the air before the band is kept and the quest box hangs on the band's top edge as the one thing to scroll toward; the band's colour starts at the box's middle at any box height, and the box is opaque, coloured as its top half would be, so the seam never shows through it */
+.band{position:relative;isolation:isolate}
+.seam{position:relative;margin-bottom:56px}
+.seam .sysbox--supers{margin-bottom:0}
+.band{padding-top:0}
+.band .seam::before{content:"";position:absolute;z-index:-1;top:0;bottom:50%;left:calc(50% - 50vw);width:100vw;background:var(--paper)}
+@media (max-width: 60rem){
+  .sysbox--supers{width:calc(100% - 10px);padding:22px 20px 24px;--b:14px}
+  .seam{margin-bottom:36px}
+}
+/* Supers blurb fold (Luca 2026-11-02, canvas round 14): open everywhere by default; the phone closes it on load so the band stays short, and "Read more" opens it in place */
+.more p + p{margin-top:24px}
+.more summary{display:none}
+@media (max-width: 60rem){
+  .split__art img{max-width:200px}
+  .more summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule-2);padding-bottom:1px}
+  .more summary::-webkit-details-marker{display:none}
+  .more summary::after{content:"\25BE"}
+  .more[open] summary{display:none}
+}
