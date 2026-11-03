@@ -103,12 +103,14 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .section{padding-block:144px}
 .section h2{margin-bottom:64px}
 .shelf{list-style:none;margin:0;padding:0}
-/* the shelf heading as a LitRPG System window: a framed, glowing prompt with corner brackets */
-.sysbox{--c:var(--accent);--b:18px;position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;width:fit-content;max-width:100%;margin:0 auto 64px;padding:28px 48px 32px;text-align:center;border:1px solid oklch(80% 0.11 230 / 0.35);background:linear-gradient(180deg,oklch(30% 0.08 245 / 0.45),oklch(18.5% 0.052 264 / 0.6));box-shadow:0 0 32px -4px oklch(80% 0.11 230 / 0.28),inset 0 0 24px oklch(80% 0.11 230 / 0.08)}
-.sysbox::before,.sysbox::after{content:"";position:absolute;inset:-5px;pointer-events:none;background:
+/* the shelf heading as a LitRPG System window: a framed, glowing prompt with corner brackets; bottom padding set so the heading baseline sits as far from the bottom edge as the tag's top from the top edge (measured 2026-11-03: 31px each on desktop, 24.5px on the phone; was 31 against 40 and 24.5 against 28.5) */
+.sysbox{--c:var(--accent);--b:18px;position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;width:fit-content;max-width:100%;margin:0 auto 64px;padding:28px 48px 23px;text-align:center;border:1px solid oklch(80% 0.11 230 / 0.35);background:linear-gradient(180deg,oklch(30% 0.08 245 / 0.45),oklch(18.5% 0.052 264 / 0.6));box-shadow:0 0 32px -4px oklch(80% 0.11 230 / 0.28),inset 0 0 24px oklch(80% 0.11 230 / 0.08)}
+/* all four corner brackets drawn in place (2026-11-03): the bottom pair used to be the top pair rotated 180deg, which on a box at a fractional x landed between pixels and blurred */
+.sysbox::before{content:"";position:absolute;inset:-5px;pointer-events:none;background:
   linear-gradient(var(--c),var(--c)) top left/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) top left/2px var(--b) no-repeat,
-  linear-gradient(var(--c),var(--c)) top right/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) top right/2px var(--b) no-repeat}
-.sysbox::after{rotate:180deg}
+  linear-gradient(var(--c),var(--c)) top right/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) top right/2px var(--b) no-repeat,
+  linear-gradient(var(--c),var(--c)) bottom left/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) bottom left/2px var(--b) no-repeat,
+  linear-gradient(var(--c),var(--c)) bottom right/var(--b) 2px no-repeat,linear-gradient(var(--c),var(--c)) bottom right/2px var(--b) no-repeat}
 .sysbox__tag{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)}
 .sysbox h2{margin:0;max-width:none;text-shadow:0 0 24px oklch(80% 0.11 230 / 0.35)}
 .section .sysbox h2{margin-bottom:0}
@@ -213,7 +215,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .cover{width:auto}
   .cover img{width:100%;height:auto;aspect-ratio:2/3}
   /* shelf on the phone: tighter rhythm, rules only between series */
-  .sysbox{width:calc(100% - 10px);margin-bottom:36px;padding:22px 20px 24px;--b:14px}
+  .sysbox{width:calc(100% - 10px);margin-bottom:36px;padding:22px 20px 20px;--b:14px}
   .series{padding-block:32px;row-gap:20px}
   .series:first-child{border-top:0;padding-top:0}
   .series:last-child{border-bottom:0;padding-bottom:0}
@@ -270,7 +272,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .band{padding-top:0}
 .band .seam::before{content:"";position:absolute;z-index:-1;top:0;bottom:50%;left:calc(50% - 50vw);width:100vw;background:var(--paper)}
 @media (max-width: 60rem){
-  .sysbox--supers{width:calc(100% - 10px);padding:22px 20px 24px;--b:14px}
+  .sysbox--supers{width:calc(100% - 10px);padding:22px 20px 20px;--b:14px}
   .seam{margin-bottom:36px}
 }
 /* Supers blurb fold (Luca 2026-11-02, canvas round 14): open everywhere by default; the phone closes it on load so the band stays short, and "Read more" opens it in place */
@@ -283,3 +285,30 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .more summary::after{content:"\25BE"}
   .more[open] summary{display:none}
 }
+/* shelf as partial windows (Luca 2026-11-03): the rule under the quest box is gone; a line leaves the box at its lower third and runs to both page edges, where it ends in the box's own corner brackets (2px, accent, --b long) turned to face down; every rule between series ends in the same brackets reaching up and down, the last rule in brackets reaching up, so each series reads as a half-framed sub-window. The box is opaque (its look over the page) so the line never shows through it */
+.questline{position:relative;display:flex;justify-content:center;margin-bottom:24px;--b:18px}
+.questline .sysbox{z-index:1;margin:0;background:linear-gradient(180deg,color-mix(in srgb,oklch(30% 0.08 245) 45%,var(--paper)),color-mix(in srgb,oklch(18.5% 0.052 264) 60%,var(--paper)))}
+.questline::before{content:"";position:absolute;left:0;right:0;top:66.6%;height:2px;background:var(--rule);pointer-events:none}
+.questline::after{content:"";position:absolute;left:0;right:0;top:66.6%;height:var(--b);pointer-events:none;background:
+  linear-gradient(var(--accent),var(--accent)) top left/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) top left/2px 100% no-repeat,
+  linear-gradient(var(--accent),var(--accent)) top right/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) top right/2px 100% no-repeat}
+.series{position:relative;--b:18px;border-top-width:2px}
+.series:last-child{border-bottom-width:2px}
+.series::before{content:"";position:absolute;left:0;right:0;top:calc(-2px - var(--b));height:calc(2 * var(--b) + 2px);pointer-events:none;background:
+  linear-gradient(var(--accent),var(--accent)) left 0 top var(--b)/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) left/2px 100% no-repeat,
+  linear-gradient(var(--accent),var(--accent)) right 0 top var(--b)/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) right/2px 100% no-repeat}
+.series:last-child::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:calc(var(--b) + 2px);pointer-events:none;background:
+  linear-gradient(var(--accent),var(--accent)) bottom left/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) bottom left/2px 100% no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom right/var(--b) 2px no-repeat,linear-gradient(var(--accent),var(--accent)) bottom right/2px 100% no-repeat}
+.series:first-child{border-top:0}
+.series:first-child::before{content:none}
+@media (max-width: 60rem){
+  /* phone: the box fills the column, so it keeps no side line; the brackets stay on the rules between series (the shelf rules are 2px, as thick as the bracket arms, so each arm sits exactly on its rule), at the box's phone size */
+  .questline{margin-bottom:36px}
+  .questline::before,.questline::after{content:none}
+  .series:last-child::after{content:none}
+  .series{--b:14px}
+}
+/* Supers seam line (Luca 2026-11-03): where the band's colour starts, one plain light violet line runs from edge to edge of the screen, behind the Supers box, phone and desktop alike */
+.seam .sysbox--supers{z-index:1}
+.seam::after{content:"";position:absolute;top:calc(50% - 1px);left:calc(50% - 50vw);width:100vw;height:2px;pointer-events:none;background:color-mix(in oklab,#a759fc 55%,transparent)}
