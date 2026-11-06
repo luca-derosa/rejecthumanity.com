@@ -243,12 +243,55 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .prose p,.prose li{color:var(--ink-2)}
 .prose ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:12px}
 .prose .actions{margin-top:24px}
-/* news: posts newest first, a rule between them */
-.post{display:flex;flex-direction:column;gap:12px;padding-block:40px;border-top:1px solid var(--rule)}
-.news h1 + .post{margin-top:24px}
-.post h2{margin-top:0}
-.site .post h2 a{text-decoration:none}
-.site .post h2 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+/* blog (Luca 2026-11-06): news.html is the index, one card per post; each post has its own reading page in news/ */
+.news{max-width:44rem;margin-inline:auto;gap:0}
+.news h1{margin-bottom:8px}
+.news > .lead{margin-bottom:40px}
+.card-post{display:flex;flex-direction:column;gap:12px;padding-block:36px;border-top:1px solid var(--rule)}
+.card-post:last-of-type{border-bottom:1px solid var(--rule)}
+.prose .card-post h2{font-size:clamp(1.625rem, 1.4vw + 1.1rem, 2.25rem);font-weight:400;font-stretch:112%;letter-spacing:-0.01em;line-height:1.15;margin-top:0;max-width:24ch}
+.site .card-post h2 a{text-decoration:none}
+.site .card-post h2 a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.card-post__excerpt{font-size:1.0625rem;line-height:1.65;max-width:60ch}
+.site a.card-post__more{color:var(--accent);font-weight:500;text-decoration:none}
+.site a.card-post__more:hover{color:var(--accent-hover);text-decoration:underline}
+/* a post page: one centred reading column */
+.article{max-width:42rem;margin-inline:auto}
+.article__back{font-size:0.9375rem;margin-bottom:40px}
+.site .article__back a,.site .article__end > p a{color:var(--muted);text-decoration:none}
+.site .article__back a:hover,.site .article__end > p a:hover{color:var(--ink)}
+.article__head{display:flex;flex-direction:column;gap:20px;padding-bottom:36px;margin-bottom:40px;border-bottom:1px solid var(--rule)}
+.article__head h1{font-size:clamp(2.25rem, 3.2vw + 1rem, 3.75rem);max-width:18ch}
+.article__body{display:flex;flex-direction:column;gap:1.15em;font-size:1.1875rem;line-height:1.75;color:var(--ink-2)}
+.article__body > p:first-child{font-size:1.3125rem;line-height:1.65;color:var(--ink)}
+.article__body em{color:var(--ink)}
+.article__end{display:flex;flex-direction:column;gap:32px;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule)}
+.article__steps{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.site a.article__step{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);text-decoration:none;font-weight:500;line-height:1.3;transition:border-color 160ms ease-out}
+.site a.article__step:hover{border-color:var(--accent)}
+.article__step--older{grid-column:2;text-align:right}
+.article__figure{margin:0.6em 0;display:flex;flex-direction:column;gap:10px}
+.article__figure img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--rule)}
+.article__figure--tall{max-width:17rem;margin-inline:auto;width:100%}
+.article__pic-link{display:block;border-radius:10px}
+.article__pic-link img{transition:transform 200ms ease-out,box-shadow 200ms ease-out,border-color 200ms ease-out}
+.article__pic-link:hover img{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+.article__row{display:flex;gap:20px;justify-content:center;margin:0.6em 0}
+.article__row .article__figure{margin:0;flex:1 1 0;min-width:0;max-width:15rem}
+.article__figure figcaption{font-size:0.875rem;line-height:1.5;color:var(--muted);text-align:center}
+.card-post__pic{display:block;margin-bottom:8px}
+.card-post__pic img{display:block;width:100%;height:auto;max-height:22rem;object-fit:cover;border-radius:10px;border:1px solid var(--rule)}
+@media (max-width: 60rem){
+  .news > .lead{margin-bottom:24px}
+  .card-post{padding-block:28px}
+  .article__back{margin-bottom:24px}
+  .article__head{gap:14px;padding-bottom:24px;margin-bottom:28px}
+  .article__body{font-size:1.0625rem;line-height:1.7}
+  .article__body > p:first-child{font-size:1.1875rem}
+  .article__end{margin-top:48px}
+  .article__steps{grid-template-columns:1fr}
+  .article__step--older{grid-column:auto;text-align:left}
+}
 @media (max-width: 60rem){.page{padding-block:24px 80px}}
 /* desktop shelf: covers grow to fill the row three across, two-book series centred; text centred against the covers; less air above the shelf */
 @media (min-width: 60.0625rem){
