@@ -255,6 +255,24 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .card-post__excerpt{font-size:1.0625rem;line-height:1.65;max-width:60ch}
 .site a.card-post__more{color:var(--accent);font-weight:500;text-decoration:none}
 .site a.card-post__more:hover{color:var(--accent-hover);text-decoration:underline}
+/* homepage: the newest blog post, between the Supers band and the newsletter (Luca 2026-11-06; build-news fills it) */
+.latest{padding-top:112px}
+.latest + #newsletter{padding-top:96px}
+.latest .wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.site a.latest__card{display:flex;flex-direction:column;gap:12px;width:100%;max-width:44rem;padding:32px 36px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2);text-decoration:none;color:var(--ink);transition:border-color 180ms ease-out,transform 180ms ease-out,box-shadow 180ms ease-out}
+.site a.latest__card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.latest__label{color:var(--accent);text-transform:uppercase;letter-spacing:0.08em}
+.latest__title{font-size:clamp(1.75rem, 1.6vw + 1.1rem, 2.5rem);font-weight:400;font-stretch:112%;letter-spacing:-0.01em;line-height:1.12;max-width:24ch}
+.latest__excerpt{font-size:1.0625rem;line-height:1.65;color:var(--ink-2)}
+.latest__more{color:var(--accent);font-weight:500}
+.latest__all{font-size:0.9375rem}
+.site .latest__all a{color:var(--muted)}
+.site .latest__all a:hover{color:var(--ink)}
+@media (max-width: 60rem){
+  .latest{padding-top:56px}
+  .latest + #newsletter{padding-top:56px}
+  .site a.latest__card{padding:24px 22px}
+}
 /* a post page: one centred reading column */
 .article{max-width:42rem;margin-inline:auto}
 .article__back{font-size:0.9375rem;margin-bottom:40px}
