@@ -393,3 +393,26 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
   .notice__box{flex-direction:column;gap:14px;width:auto;padding:18px 20px 20px;border-radius:12px;text-align:center}
 }
 @media (min-width: 60.0625rem){.notice__text{white-space:nowrap}}
+/* blog posts: subheadings and lists (build-news.py, 2026-11-08) */
+.article__body h2{font-size:clamp(1.375rem, 0.9vw + 1.05rem, 1.75rem);font-weight:500;font-stretch:100%;letter-spacing:0;line-height:1.3;max-width:none;margin:0.9em 0 -0.2em;color:var(--ink)}
+.article__body ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:0.5em}
+/* Nexus devlog (Luca 2026-11-08: a section just for the game, one link from the homepage): the game's own colours, cyan lines and magma glow, over the site's paper */
+.section-nexus{--accent:oklch(87% 0.12 195);--accent-hover:oklch(92% 0.09 195);--magma:oklch(74% 0.17 48)}
+.nexus-kicker,.side__tag{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:oklch(87% 0.12 195)}
+.section-nexus h1{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;font-weight:500;font-stretch:100%;letter-spacing:0.02em;color:var(--accent);text-shadow:0 0 28px oklch(87% 0.12 195 / 0.35)}
+.nexus-hero{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
+.nexus-hero h1{margin:0}
+.nexus-hero .lead{max-width:40ch}
+.nexus-hero__art{margin:16px 0 8px;align-self:center;width:min(100%,30rem)}
+.nexus-hero__art img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid color-mix(in oklab,var(--magma) 35%,var(--rule));box-shadow:0 0 48px -8px color-mix(in oklab,var(--magma) 45%,transparent)}
+.prose .nexus-log{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.section-nexus .article__body h2{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;font-size:1.25rem;letter-spacing:0.01em;color:var(--accent)}
+.section-nexus .article__figure img,.section-nexus .card-post__pic img{border-color:color-mix(in oklab,var(--accent) 25%,var(--rule))}
+/* homepage: the one quiet link to the Nexus devlog, last before the footer (scroll economy: books first) */
+.side{padding-block:8px 72px}
+.side .wrap{display:flex;justify-content:center}
+.site a.side__link{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 12px;padding:14px 20px;border:1px dashed var(--rule-2);border-radius:10px;color:var(--ink-2);text-decoration:none;text-align:center;transition:border-color 160ms ease-out,color 160ms ease-out}
+.site a.side__link:hover{border-color:oklch(87% 0.12 195);color:var(--ink)}
+.side__link strong{color:var(--ink);font-weight:500}
+@media (max-width: 60rem){.nexus-hero{margin-bottom:36px}.side{padding-block:0 48px}}
+.section-nexus .card-post__pic img{max-height:none}
