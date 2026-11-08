@@ -416,3 +416,11 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .side__link strong{color:var(--ink);font-weight:500}
 @media (max-width: 60rem){.nexus-hero{margin-bottom:36px}.side{padding-block:0 48px}}
 .section-nexus .card-post__pic img{max-height:none}
+/* click-to-zoom pictures (assets/zoom.js, Luca 2026-11-08) */
+.zoomable{cursor:zoom-in}
+.zoom{padding:0;border:0;background:transparent;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh;margin:0;overflow:hidden;cursor:zoom-out}
+.zoom[open]{display:flex;align-items:center;justify-content:center}
+.zoom::backdrop{background:oklch(8% 0.03 264 / 0.92)}
+.zoom img{display:block;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);width:auto;height:auto;border-radius:10px;border:1px solid var(--rule-2);object-fit:contain}
+.site .zoom__close,.zoom__close{position:fixed;top:12px;right:12px;width:48px;height:48px;border:1px solid var(--rule-2);border-radius:50%;background:var(--paper-2);color:var(--ink);font:400 1.75rem/1 var(--font);cursor:pointer}
+.zoom__close:hover{border-color:var(--accent)}
