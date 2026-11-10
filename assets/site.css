@@ -429,7 +429,9 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .site a.nx-play__btn:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
 .nx-play__note{font-size:0.8125rem;color:var(--muted)}
 .nx-clip{display:grid;grid-template-columns:minmax(0,600px) 1fr;gap:32px;align-items:center;margin:0 0 64px;padding:12px;border:1px solid color-mix(in oklab,var(--accent) 30%,transparent);border-radius:4px;background:#050a12}
-.nx-clip img{display:block;width:100%;height:auto;border-radius:2px;border:1px solid color-mix(in oklab,var(--magma) 35%,transparent)}
+.nx-clip img,.nx-clip video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:2px;border:1px solid color-mix(in oklab,var(--magma) 35%,transparent);background:#050a12}
+.nx-clip .nx-clip__still{display:none}
+@media (prefers-reduced-motion: reduce){.nx-clip .nx-clip__video{display:none}.nx-clip .nx-clip__still{display:block}}
 .nx-clip figcaption{display:flex;flex-direction:column;gap:10px;padding-right:16px;font-size:0.9375rem;line-height:1.55;color:var(--ink-2)}
 .nx-clip figcaption strong{font:500 1.125rem/1.35 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;color:var(--accent)}
 .nx-log{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
