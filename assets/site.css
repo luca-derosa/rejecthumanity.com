@@ -431,6 +431,8 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .nx-clip{display:grid;grid-template-columns:minmax(0,600px) 1fr;gap:32px;align-items:center;margin:0 0 64px;padding:12px;border:1px solid color-mix(in oklab,var(--accent) 30%,transparent);border-radius:4px;background:#050a12}
 .nx-clip img,.nx-clip video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:2px;border:1px solid color-mix(in oklab,var(--magma) 35%,transparent);background:#050a12}
 .nx-clip .nx-clip__still{display:none}
+.nx-clip__video{cursor:pointer}
+.nx-clip__video:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
 @media (prefers-reduced-motion: reduce){.nx-clip .nx-clip__video{display:none}.nx-clip .nx-clip__still{display:block}}
 .nx-clip figcaption{display:flex;flex-direction:column;gap:10px;padding-right:16px;font-size:0.9375rem;line-height:1.55;color:var(--ink-2)}
 .nx-clip figcaption strong{font:500 1.125rem/1.35 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;color:var(--accent)}
