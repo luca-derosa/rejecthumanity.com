@@ -388,9 +388,16 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .site .btn-audible:hover{filter:brightness(1.06) saturate(1.08);box-shadow:inset 0 1px 0 rgb(255 255 255 / 0.75),inset 0 -2px 0 rgb(120 55 0 / 0.35),0 4px 0 #9c5200,0 10px 20px -4px rgb(0 0 0 / 0.55),0 0 32px rgb(247 153 28 / 0.6)}
 .site .btn-audible:active{transform:translateY(3px);filter:brightness(0.97);box-shadow:inset 0 2px 4px rgb(120 55 0 / 0.45),inset 0 -1px 0 rgb(255 255 255 / 0.2),0 1px 0 #9c5200,0 3px 8px -2px rgb(0 0 0 / 0.5),0 0 40px rgb(247 153 28 / 0.75)}
 .site .btn-audible:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+/* narrow screens (Luca 2026-11-10: the stacked box looked wrong): a slim row with the text wrapping beside the button down to phone width, then a centred card */
 @media (max-width: 60rem){
   .notice{padding-top:20px}
-  .notice__box{flex-direction:column;gap:14px;width:auto;padding:18px 20px 20px;border-radius:12px;text-align:center}
+  .notice__box{gap:16px;width:auto;padding:12px 12px 12px 20px;border-radius:20px}
+  .notice__text{font-size:0.9375rem}
+}
+@media (max-width: 34rem){
+  .notice__box{flex-direction:column;gap:12px;padding:14px 16px 16px;border-radius:16px;text-align:center}
+  .notice__tag{display:table;margin:0 auto 6px}
+  .site .btn-audible{min-height:40px;padding:0 18px;font-size:0.9375rem}
 }
 @media (min-width: 60.0625rem){.notice__text{white-space:nowrap}}
 /* blog posts: subheadings and lists (build-news.py, 2026-11-08) */
@@ -398,7 +405,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .article__body ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:0.5em}
 /* Nexus devlog (Luca 2026-11-08: a section just for the game, one link from the homepage): the game's own colours, cyan lines and magma glow, over the site's paper */
 .section-nexus{--accent:oklch(87% 0.12 195);--accent-hover:oklch(92% 0.09 195);--magma:oklch(74% 0.17 48)}
-.nexus-kicker,.side__tag{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:oklch(87% 0.12 195)}
+.nexus-kicker{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:oklch(87% 0.12 195)}
 .section-nexus h1{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;font-weight:500;font-stretch:100%;letter-spacing:0.02em;color:var(--accent);text-shadow:0 0 28px oklch(87% 0.12 195 / 0.35)}
 .nexus-hero{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
 .nexus-hero h1{margin:0}
@@ -408,13 +415,36 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .prose .nexus-log{font:500 0.8125rem/1.2 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
 .section-nexus .article__body h2{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;font-size:1.25rem;letter-spacing:0.01em;color:var(--accent)}
 .section-nexus .article__figure img,.section-nexus .card-post__pic img{border-color:color-mix(in oklab,var(--accent) 25%,var(--rule))}
-/* homepage: the one quiet link to the Nexus devlog, last before the footer (scroll economy: books first) */
-.side{padding-block:8px 72px}
-.side .wrap{display:flex;justify-content:center}
-.site a.side__link{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 12px;padding:14px 20px;border:1px dashed var(--rule-2);border-radius:10px;color:var(--ink-2);text-decoration:none;text-align:center;transition:border-color 160ms ease-out,color 160ms ease-out}
-.site a.side__link:hover{border-color:oklch(87% 0.12 195);color:var(--ink)}
-.side__link strong{color:var(--ink);font-weight:500}
-@media (max-width: 60rem){.nexus-hero{margin-bottom:36px}.side{padding-block:0 48px}}
+@media (max-width: 60rem){.nexus-hero{margin-bottom:36px}}
+/* homepage Nexus card, the one way into the devlog, under the Audible notice (Luca 2026-11-10: the GIF as the hook, in the game's own look, not a news pill); its v-line is written by build-news.py */
+.nx{padding-block:28px 0}
+.nx .wrap{display:flex;justify-content:center}
+.site a.nx__card{--cy:oklch(87% 0.12 195);--mg:oklch(74% 0.17 48);position:relative;display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;width:min(100%,46rem);padding:16px 24px 16px 16px;border:1px solid color-mix(in oklab,var(--cy) 40%,transparent);border-radius:4px;background:repeating-linear-gradient(0deg,rgb(255 255 255 / 0.018) 0 1px,transparent 1px 3px),radial-gradient(120% 140% at 0% 50%,color-mix(in oklab,var(--mg) 16%,transparent),transparent 60%),#050a12;color:var(--ink-2);text-decoration:none;box-shadow:0 0 0 1px rgb(0 0 0 / 0.6),0 18px 40px -20px color-mix(in oklab,var(--mg) 55%,transparent);transition:border-color 160ms ease-out,box-shadow 200ms ease-out}
+.site a.nx__card::before,.site a.nx__card::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--cy);pointer-events:none}
+.site a.nx__card::before{top:-3px;left:-3px;border-right:0;border-bottom:0}
+.site a.nx__card::after{bottom:-3px;right:-3px;border-left:0;border-top:0}
+.site a.nx__card:hover{border-color:var(--cy);box-shadow:0 0 0 1px rgb(0 0 0 / 0.6),0 0 36px -6px color-mix(in oklab,var(--cy) 50%,transparent),0 18px 48px -18px color-mix(in oklab,var(--mg) 70%,transparent)}
+.site a.nx__card:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+.nx__screen{display:block;border:1px solid color-mix(in oklab,var(--mg) 45%,transparent);border-radius:2px;overflow:hidden;box-shadow:0 0 28px -6px color-mix(in oklab,var(--mg) 60%,transparent)}
+.nx__screen img{display:block;width:100%;height:auto;aspect-ratio:1}
+.nx__body{display:flex;flex-direction:column;gap:8px;font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace}
+.nx__kicker{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--cy);opacity:.85}
+.nx__title{font-size:2.25rem;line-height:1;font-weight:600;letter-spacing:0.04em;color:var(--cy);text-shadow:0 0 24px color-mix(in oklab,var(--cy) 45%,transparent)}
+.nx__pitch{font-size:0.9375rem;line-height:1.5;color:var(--ink-2)}
+.nx__log{font-size:0.8125rem;color:var(--ink-2)}
+.nx__ver{display:inline-block;margin-right:8px;padding:1px 6px;border:1px solid color-mix(in oklab,var(--mg) 70%,transparent);border-radius:2px;color:var(--mg)}
+.nx__go{margin-top:4px;font-size:0.9375rem;color:var(--cy)}
+.nx__cursor{animation:nxblink 1s steps(1) infinite}
+@keyframes nxblink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.nx__cursor{animation:none}}
+@media (max-width: 40rem){
+  .site a.nx__card{grid-template-columns:1fr;gap:16px;padding:12px 12px 18px}
+  .nx__screen{aspect-ratio:16/9}
+  .nx__screen img{height:100%;object-fit:cover;aspect-ratio:auto}
+  .nx__body{padding-inline:6px}
+  .nx__title{font-size:1.875rem}
+  .nx__pitch{font-size:0.875rem}
+}
 .section-nexus .card-post__pic img{max-height:none}
 /* click-to-zoom pictures (assets/zoom.js, Luca 2026-11-08) */
 .zoomable{cursor:zoom-in}
