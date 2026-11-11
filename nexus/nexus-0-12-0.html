@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexus 0.12.0: the ship fights back · Nexus devlog · Luca De Rosa</title>
+<meta name="description" content="The crashed ship gets its first two upgrades: timber shoring that doubles its hull, then a laser pylon on each corner that burns the strongest monster in sight and never fires into the fog.">
+<meta property="og:title" content="Nexus 0.12.0: the ship fights back">
+<meta property="og:description" content="The crashed ship gets its first two upgrades: timber shoring that doubles its hull, then a laser pylon on each corner that burns the strongest monster in sight and never fires into the fog.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rejecthumanity.com/nexus/nexus-0-12-0.html">
+<meta property="og:image" content="https://rejecthumanity.com/assets/nexus/nexus-0-12-0.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:author" content="https://rejecthumanity.com/">
+<meta property="article:tag" content="nexus">
+<meta property="article:tag" content="game dev">
+<meta property="article:tag" content="devlog">
+<meta property="article:tag" content="patch notes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rejecthumanity.com/nexus/nexus-0-12-0.html">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#02071d">
+<link rel="preload" href="../assets/fonts/MonaSans-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Nexus 0.12.0: the ship fights back", "description": "The crashed ship gets its first two upgrades: timber shoring that doubles its hull, then a laser pylon on each corner that burns the strongest monster in sight and never fires into the fog.", "datePublished": "2026-11-11", "url": "https://rejecthumanity.com/nexus/nexus-0-12-0.html", "mainEntityOfPage": "https://rejecthumanity.com/nexus/nexus-0-12-0.html", "author": {"@type": "Person", "name": "Luca De Rosa", "url": "https://rejecthumanity.com/"}, "image": "https://rejecthumanity.com/assets/nexus/nexus-0-12-0.jpg", "keywords": ["nexus", "game dev", "devlog", "patch notes"]}</script>
+<script src="../assets/zoom.js" defer></script>
+</head>
+<body class="section-nexus">
+
+<div class="site">
+
+<!-- chrome:nav -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap nav__bar">
+    <a class="nav__mark" href="../" aria-label="Luca De Rosa, home">Luca De Rosa</a>
+    <button class="nav__here" type="button" aria-expanded="true" aria-controls="nav-links"><span class="nav__here-text">Menu</span><span class="nav__here-mark" aria-hidden="true">&#9662;</span></button>
+    <div class="nav__right" id="nav-links">
+      <div class="nav__links">
+        <a href="../#shelf">Books</a>
+        <a href="../#free">Read free</a>
+        <a href="../news.html">News</a>
+        <a href="https://discord.gg/NTaDVzCRe4" target="_blank" rel="noopener">Discord</a>
+        <a href="https://www.patreon.com/cw/Luca_DR" target="_blank" rel="noopener">Patreon</a>
+      </div>
+      <a class="btn btn--secondary btn--small nav__cta" href="../#newsletter">Newsletter</a>
+    </div>
+  </div>
+</nav>
+<script src="../assets/nav.js" defer></script>
+<!-- /chrome:nav -->
+
+<main class="page">
+  <div class="wrap">
+    <article class="article">
+      <p class="article__back"><a href="../nexus.html"><span aria-hidden="true">←</span> All devlog posts</a></p>
+      <div class="article__head">
+        <h1>Nexus 0.12.0: the ship fights back</h1>
+        <p class="meta">by Luca De Rosa <span aria-hidden="true">·</span> <time datetime="2026-11-11">11 November 2026</time> <span aria-hidden="true">·</span> 2 min read</p>
+      </div>
+      <div class="article__body">
+          <p>Nexus is the little tower-defence game I’m building on the side: a starship crashed on a medieval world, a maze of forest all around it, and monsters that are only ever born where you can’t see.</p>
+          <p>Until now the ship had no upgrades of its own. This update gives it two, one after the other.</p>
+          <figure class="article__figure">
+            <img src="../assets/nexus/nexus-0-12-0.webp" alt="Four panels from Nexus 0.12.0: the shored-up ship seen whole inside its fence of light with the hull at 200, the four corner pylons each holding a monster with a laser, a Brute walking out of the fog and taken by a laser only once it stands on seen ground, and one pylon and its beam close up" width="1200" height="675" loading="lazy" decoding="async">
+          </figure>
+          <h2>Timber Shoring</h2>
+          <p>Click the ship and you can shore it up for 80 wood. The hull goes from 100 to 200, and the ship’s four towers hit 50% harder and see 1 tile further. A fence of light now rings the site.</p>
+          <h2>Lance Pylons</h2>
+          <p>The second upgrade comes after the first, for 200 wood and 80 stone, so you need Stonework before you can buy it. A pylon rises on each corner of the site and fires a laser at the strongest monster in sight, up to 30 tiles away, one monster each. The beam burns harder the longer it holds, and it never reaches into the fog.</p>
+          <h2>A cleaner crater</h2>
+          <p>The crater reads cleaner on its east side: a hot rock that sat under a hull plate has moved off it.</p>
+          <h2>Icons on every price</h2>
+          <p>Every price and resource amount now shows its icon: the Nexus’s upgrades, a tower’s upgrade and tier prices, combo prices, plantations, the Transmuter, card details and the log.</p>
+          <h2>Fixed</h2>
+          <ul>
+            <li>A far deposit’s beacon west of the ship could freeze the picture for a moment.</li>
+            <li>A tower or a Lure could be built on a rubble pile, and a monster climbing out of a mine or rising by a fallen star could land on one and stand there stuck.</li>
+            <li>A tower could pick up a drone on a tier that has none.</li>
+          </ul>
+      </div>
+      <div class="article__end">
+        <nav class="article__steps" aria-label="More posts">
+          <a class="article__step article__step--older" href="nexus-0-11-0.html"><span class="meta">Older</span><span>Nexus 0.11.0: the Lure</span></a>
+        </nav>
+        <p><a href="../nexus.html"><span aria-hidden="true">←</span> All devlog posts</a></p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<!-- chrome:foot -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__about">
+        <p class="foot__mark">Luca De Rosa</p>
+        <p class="meta">A LitRPG author who decided to get a bit spicier. Italian writer, English second language, pizza with a fork eater.</p>        <p class="meta">Questions, swaps, or just saying hi: come find me on <a href="https://discord.gg/NTaDVzCRe4" target="_blank" rel="noopener">Discord</a>.</p>
+      </div>
+      <div class="foot__links">
+      <div class="foot__icons">
+        <a href="https://discord.gg/NTaDVzCRe4" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a>
+        <a href="https://www.facebook.com/lucadrauthor/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a href="https://www.instagram.com/lucadr_author/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+        <a href="https://www.threads.com/@lucadr_author" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+        <a href="https://x.com/LukeDR1998" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+      </div>
+      <p class="foot__also">Also on <a href="https://www.royalroad.com/profile/173552" target="_blank" rel="noopener">Royal Road</a> · <a href="https://www.scribblehub.com/profile/25039/lucader881/" target="_blank" rel="noopener">Scribble Hub</a> · <a href="https://www.patreon.com/cw/Luca_DR" target="_blank" rel="noopener">Patreon</a> · <a href="https://www.amazon.com/stores/Luca-De-Rosa/author/B0C8GHW891" target="_blank" rel="noopener">Amazon</a> · <a href="https://www.goodreads.com/author/show/54348673.Luca_De_Rosa" target="_blank" rel="noopener">Goodreads</a> · <a href="https://harem-lit.com/authors/luca-dr" target="_blank" rel="noopener">Harem-Lit</a></p>
+      <p class="foot__privacy"><a href="../privacy.html">Privacy</a></p>
+      </div>
+    </div>
+    <p class="foot__legal">© 2026 Luca De Rosa</p>
+  </div>
+</footer>
+<!-- /chrome:foot -->
+
+</div>
+</body>
+</html>
