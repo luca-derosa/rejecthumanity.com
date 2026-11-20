@@ -506,3 +506,10 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .zoom img{display:block;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);width:auto;height:auto;border-radius:10px;border:1px solid var(--rule-2);object-fit:contain}
 .site .zoom__close,.zoom__close{position:fixed;top:12px;right:12px;width:48px;height:48px;border:1px solid var(--rule-2);border-radius:50%;background:var(--paper-2);color:var(--ink);font:400 1.75rem/1 var(--font);cursor:pointer}
 .zoom__close:hover{border-color:var(--accent)}
+
+/* newsletter page (2026-11-20): the Supers cover beside the form; on the phone the form comes first so it sits above the fold */
+.signup .split__text{gap:20px}
+.signup h1{font-size:var(--t-section);max-width:16ch}
+.signup__tag{color:color-mix(in oklab,#a759fc 55%,white);margin:0}
+.signup__form{width:100%;max-width:34rem}
+@media (max-width: 60rem){.signup .split__text{order:-1}.signup .split__art img{max-width:200px}.signup__form{text-align:left}}
