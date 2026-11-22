@@ -139,6 +139,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .flank--bound{--l:url("icons/angel.svg");--lp:0.045;--lg:oklch(85% 0.09 230 / 0.7);--r:url("icons/bat.svg");--rp:0.035;--rg:oklch(55% 0.2 340 / 0.75)}
 .flank--infinity{--l:url("icons/torch.svg");--lsx:-1;--lp:0.041;--lg:oklch(80% 0.15 70 / 0.75);--r:url("icons/torch.svg");--rsx:1;--rp:0.041;--rg:oklch(80% 0.15 70 / 0.75)}
 .flank--edge{--l:url("icons/meteor.svg");--lp:0.037;--lg:oklch(66% 0.2 35 / 0.75);--r:url("icons/meteor.svg");--rp:0.037;--rg:oklch(66% 0.2 35 / 0.75)}
+.flank--supers{--l:url("icons/bolt.svg");--lp:0.16;--lg:color-mix(in oklab,#a759fc 75%,transparent);--r:url("icons/bolt.svg");--rp:0.16;--rg:color-mix(in oklab,#a759fc 75%,transparent)}
 /* genre tags: square, body face, sentence case */
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .tags li{font-size:0.875rem;font-weight:500;color:var(--ink-2);padding:4px 12px;border:1px solid var(--rule-2);line-height:1.4}
@@ -513,3 +514,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .signup__tag{color:color-mix(in oklab,#a759fc 55%,white);margin:0}
 .signup__form{width:100%;max-width:34rem}
 @media (max-width: 60rem){.signup .split__text{order:-1}.signup .split__art img{max-width:200px}.signup__form{text-align:left}}
+
+/* Supers covers are 5:8, not 2:3 (2026-11-22): the fan card and the shelf cover keep their own ratio so the lettering is neither stretched nor cropped */
+.fan__card--tall{aspect-ratio:5/8}
+.cover--tall img{height:auto;aspect-ratio:5/8}
