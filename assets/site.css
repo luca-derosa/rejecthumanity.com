@@ -299,7 +299,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .article__row .article__figure{margin:0;flex:1 1 0;min-width:0;max-width:15rem}
 .article__figure figcaption{font-size:0.875rem;line-height:1.5;color:var(--muted);text-align:center}
 .card-post__pic{display:block;margin-bottom:8px}
-.card-post__pic img{display:block;width:100%;height:auto;max-height:22rem;object-fit:cover;border-radius:10px;border:1px solid var(--rule)}
+.card-post__pic img{display:block;width:auto;max-width:100%;height:auto;max-height:22rem;border-radius:10px;border:1px solid var(--rule)}
 @media (max-width: 60rem){
   .news > .lead{margin-bottom:24px}
   .card-post{padding-block:28px}
@@ -442,7 +442,7 @@ a.fan__card:hover img{translate:0 -6px;filter:none}
 .section-nexus .nx-log .card-post:hover{border-color:var(--accent);box-shadow:0 0 30px -10px color-mix(in oklab,var(--accent) 60%,transparent)}
 .section-nexus .nx-log .card-post:last-of-type{border-bottom:1px solid color-mix(in oklab,var(--accent) 22%,var(--rule))}
 .section-nexus .nx-log .card-post__pic{margin:0}
-.section-nexus .nx-log .card-post__pic img{border-radius:2px;aspect-ratio:16/9;object-fit:cover}
+.section-nexus .nx-log .card-post__pic img{width:100%;border-radius:2px;aspect-ratio:16/9;object-fit:cover}
 .section-nexus .nx-log .card-post h2{font:500 1.0625rem/1.35 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;letter-spacing:0;max-width:none}
 .section-nexus .nx-log .card-post h2 a{color:var(--accent)}
 .section-nexus .nx-log .card-post__excerpt{font-size:0.9375rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
